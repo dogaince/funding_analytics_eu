@@ -1,0 +1,35 @@
+#!/bin/ipython
+# ipy prefix neccessary for running with %run magic
+
+%matplotlib inline
+
+# Reload changed code
+%load_ext autoreload
+%autoreload 2
+
+# Import basic scientific stack
+import numpy as np
+import scipy as sp
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Paths
+from pathlib import Path
+import sys
+import os
+project_dir = str(Path('..').resolve())  # project directory
+sys.path.append(project_dir)  # run scripts from project directory base
+data_path = os.path.join(project_dir, 'data')  # Don't hard-code data path
+ext_data_path = os.path.join(data_path, 'external')
+raw_data_path = os.path.join(data_path, 'raw')
+proc_data_path = os.path.join(data_path, 'processed')
+inter_data_path = os.path.join(data_path, 'interim')
+cordis_h2020_path = os.path.join(ext_data_path, 'cordis', 'h2020')
+cordis_fp7_path = os.path.join(ext_data_path, 'cordis', 'fp7')
+cordis_fp6_path = os.path.join(ext_data_path, 'cordis', 'fp6')
+cordis_fp5_path = os.path.join(ext_data_path, 'cordis', 'fp5')
+cordis_fp4_path = os.path.join(ext_data_path, 'cordis', 'fp4')
+cordis_fp3_path = os.path.join(ext_data_path, 'cordis', 'fp3')
+cordis_fp2_path = os.path.join(ext_data_path, 'cordis', 'fp2')
+cordis_fp1_path = os.path.join(ext_data_path, 'cordis', 'fp1')
+cordis_ref_path = os.path.join(ext_data_path, 'cordis', 'ref')
