@@ -7,6 +7,9 @@
 %load_ext autoreload
 %autoreload 2
 
+# Import useful stuff
+import json
+
 # Import basic scientific stack
 import numpy as np
 import scipy as sp
@@ -24,6 +27,7 @@ ext_data_path = os.path.join(data_path, 'external')
 raw_data_path = os.path.join(data_path, 'raw')
 proc_data_path = os.path.join(data_path, 'processed')
 inter_data_path = os.path.join(data_path, 'interim')
+model_path = os.path.join(project_dir, 'models')
 
 cordis_h2020_path = os.path.join(ext_data_path, 'cordis', 'h2020')
 cordis_fp7_path = os.path.join(ext_data_path, 'cordis', 'fp7')
@@ -37,3 +41,5 @@ cordis_ref_path = os.path.join(ext_data_path, 'cordis', 'ref')
 
 openaire_publication_data_path = os.path.join(ext_data_path, 'openaire', 'publicationssoups')
 openaire_project_data_path = os.path.join(ext_data_path, 'openaire', 'projectssoups')
+
+crossref_works_path = os.path.join(ext_data_path, 'crossref', 'works')
