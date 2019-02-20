@@ -16,10 +16,10 @@ def pdf_cdf(ax, x, bins, normed=False, stats=True):
     cdf = np.cumsum(pdf / np.sum(pdf))
     if normed:
         ax.set_ylabel('Probability')
-        ax.bar(bin_edges[1:], pdf / np.sum(pdf), np.diff(bin_edges), color=pdf_c)
+        ax.bar(bin_edges[:-1], pdf / np.sum(pdf), np.diff(bin_edges), color=pdf_c)
     else:
         ax.set_ylabel('Frequency')
-        ax.bar(bin_edges[1:], pdf, np.diff(bin_edges), color=pdf_c)
+        ax.bar(bin_edges[:-1], pdf, np.diff(bin_edges), color=pdf_c)
     if stats:
         mean = np.mean(x)
         median = np.median(x)
@@ -28,7 +28,7 @@ def pdf_cdf(ax, x, bins, normed=False, stats=True):
         ax.legend()
     ax.set_xlim((np.min(bin_edges), np.max(bin_edges)))
     ax_cdf = ax.twinx()
-    ax_cdf.plot(bin_edges[1:], cdf, color=cdf_c, linewidth=4, alpha=0.8)
+    ax_cdf.plot(bin_edges[:-1], cdf, color=cdf_c, linewidth=4, alpha=0.8)
     ax_cdf.set_ylabel('Cumulative')
     ax_cdf.set_ylim((0, 1))
     ax_cdf.tick_params('y')
